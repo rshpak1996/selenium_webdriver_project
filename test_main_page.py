@@ -6,5 +6,5 @@ def test_guest_can_go_to_login_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     page = MainPage(browser, link)      # ініціалізуєм Page Object, передаєм в конструктор екземпляр драйвера і url адресу
     page.open()                         # відкриваєм сторінку
-    # page.go_to_login_page()             # виконуєм метод сторінки - переходимо на сторінку логіна
     page.should_be_login_link()         # перевіряємо наявнність посилання на сторінку логіна
+    # page.go_to_login_page()             # виконуєм метод сторінки - переходимо на сторінку логіна
