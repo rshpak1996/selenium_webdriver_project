@@ -10,7 +10,7 @@ class ProductPage(BasePage):
     def should_be_add_to_basket_success_text(self):
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
         product_success_text = self.browser.find_element(*ProductPageLocators.PRODUCT_SUCCESS_TEXT).text
-        assert product_name in product_success_text, "Success text are not visible"
+        assert product_name == product_success_text, "Success text are not the same with product name"
 
     def should_be_equal_price(self):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
