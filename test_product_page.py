@@ -103,7 +103,7 @@ class TestUserAddToBasketFromProductPage():
     def setup(self, browser):
         link = "http://selenium1py.pythonanywhere.com"
         registration_email = str(time.time()) + "@fakemail.org"
-        registration_password = 'hyperspaceC137'
+        registration_password = str(time.time())
         page = MainPage(browser, link)
         page.open()
         page.go_to_login_page()
