@@ -139,3 +139,4 @@ cython_debug/
 
 .selenium_env.bat
 .vscode
+ .gitignore 
