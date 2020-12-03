@@ -99,7 +99,7 @@ class TestUserAddToBasketFromProductPage():
         page = MainPage(browser, link)
         page.open()
         page.go_to_login_page()
-        login_page = LoginPage(browser, link)
+        login_page = LoginPage(browser, browser.current_url)
         login_page.register_new_user()
         login_page.should_be_authorized_user()
 
