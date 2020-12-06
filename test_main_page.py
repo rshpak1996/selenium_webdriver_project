@@ -5,11 +5,11 @@ import pytest
 
 # pytest -v --tb=line --language=en test_main_page.py
 
+link = "http://selenium1py.pythonanywhere.com/"
 
 @pytest.mark.login_guest
 class TestLoginFromMainPage():
     def test_guest_can_go_to_login_page(self, browser):
-        link = "http://selenium1py.pythonanywhere.com/"
         page = MainPage(browser, link)      # ініціалізуєм Page Object, передаєм в конструктор екземпляр драйвера і url адресу
         page.open()                         # відкриваєм сторінку
         page.should_be_login_link()         # перевіряємо наявнність посилання на сторінку логіна
@@ -18,7 +18,6 @@ class TestLoginFromMainPage():
         login_page.should_be_login_page()
 
     def test_guest_cant_see_product_in_basket_opened_from_main_page(self, browser):
-        link = "http://selenium1py.pythonanywhere.com/"
         page = MainPage(browser, link)
         page.open()
         page.go_to_basket_page()
